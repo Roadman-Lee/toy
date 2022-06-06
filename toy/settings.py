@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # locals apps
     'blog1',
     'instagram',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
