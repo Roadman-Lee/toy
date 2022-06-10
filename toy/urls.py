@@ -17,9 +17,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts', include('accounts.urls')),
     path('blog1/', include('blog1.urls')),
     path('instagram/', include('instagram.urls')),
 ]
@@ -27,7 +29,6 @@ urlpatterns = [
 # 장고는 스테틱파일이나 미디어파일 서빙을 실제 프로덕션에서 사용하는 것을 권장하지 않는다.
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    import debug_toolbar
     urlpatterns += [
         path('__debug__/', include(debug_toolbar.urls)),
     ]
