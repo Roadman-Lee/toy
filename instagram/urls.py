@@ -1,10 +1,9 @@
 from django.urls import path
-
-from . import views
+from instagram.views import UserApiView, post_list, post_detail
 
 app_name = 'instagram' # URL Revers에서 namespace역활을 함
 
 urlpatterns = [
-    path('', views.post_list),
-    path('<int:pk>/', views.post_detail),
+    path('', UserApiView.as_view()),
+    path('<int:pk>', post_detail)
 ]
