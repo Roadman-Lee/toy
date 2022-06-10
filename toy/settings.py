@@ -30,8 +30,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # django apps
-    'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # third apps
     'django_extensions',
     'debug_toolbar',
+    'rest_framework',
     # locals apps
     'blog1',
     'instagram',
@@ -134,3 +135,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
